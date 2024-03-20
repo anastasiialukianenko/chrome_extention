@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Pokladní Slevy",
+  "version": "1.0",
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "description": "Aplikace slev na základě bodů zákazníka přímo v pokladním systému.",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "css": ["bonus.css"],
+      "matches": [
+        "https://*/admin/pokladna/*"
+      ]
+    }
+  ]
+}
